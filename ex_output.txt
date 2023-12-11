@@ -1,0 +1,256 @@
+n_R = 3 # Rounds
+n_I = 10 # Individuals per team | Boards --- n_I*n_R must be even
+n_T = 12 # Teams
+
+-------------------------
+
+Set parameter Username
+Academic license - for non-commercial use only - expires 2024-12-08
+Gurobi Optimizer version 11.0.0 build v11.0.0rc2 (mac64[arm] - Darwin 22.6.0 22G320)
+
+CPU model: Apple M1 Pro
+Thread count: 10 physical cores, 10 logical processors, using up to 10 threads
+
+Optimize a model with 5745 rows, 6279 columns and 67155 nonzeros
+Model fingerprint: 0x7a1e317b
+Model has 9168 general constraints
+Variable types: 252 continuous, 6027 integer (5904 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 4e+01]
+  Objective range  [3e-03, 1e+00]
+  Bounds range     [1e+00, 1e+05]
+  RHS range        [1e+00, 3e+02]
+  GenCon rhs range [1e+00, 1e+00]
+  GenCon coe range [1e+00, 1e+00]
+Presolve removed 423 rows and 3657 columns
+Presolve time: 0.06s
+Presolved: 5322 rows, 2622 columns, 21630 nonzeros
+Variable types: 0 continuous, 2622 integer (2526 binary)
+
+Root relaxation: objective 0.000000e+00, 5341 iterations, 0.51 seconds (0.94 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0    0.00000    0  338          -    0.00000      -     -    1s
+H    0     0                      34.3393939    0.00000   100%     -    2s
+     0     0    0.03636    0  451   34.33939    0.03636   100%     -    2s
+H    0     0                      14.2787879    0.03939   100%     -    2s
+     0     0    0.07273    0  498   14.27879    0.07273  99.5%     -    2s
+H    0     0                      10.2303030    0.07273  99.3%     -    2s
+     0     0    0.07273    0  504   10.23030    0.07273  99.3%     -    2s
+     0     0    0.07273    0  483   10.23030    0.07273  99.3%     -    2s
+     0     0    0.07273    0  516   10.23030    0.07273  99.3%     -    2s
+     0     0    0.07273    0  506   10.23030    0.07273  99.3%     -    2s
+     0     0    0.07273    0  329   10.23030    0.07273  99.3%     -    4s
+H    0     0                       4.2303030    0.07273  98.3%     -    4s
+     0     0    0.07273    0  367    4.23030    0.07273  98.3%     -    4s
+     0     0    0.07273    0  355    4.23030    0.07273  98.3%     -    6s
+     0     0    0.07273    0  351    4.23030    0.07273  98.3%     -    6s
+H    0     0                       0.2424242    0.07273  70.0%     -    8s
+H    0     0                       0.2181818    0.07273  66.7%     -    8s
+     0     0    0.07273    0  256    0.21818    0.07273  66.7%     -    8s
+H    0     0                       0.1212121    0.07273  40.0%     -    8s
+     0     0    0.07273    0  327    0.12121    0.07273  40.0%     -    8s
+H    0     0                       0.1090909    0.07273  33.3%     -   10s
+     0     0    0.07273    0  300    0.10909    0.07273  33.3%     -   10s
+H    0     0                       0.0727273    0.07273  0.00%     -   11s
+     0     0    0.07273    0  265    0.07273    0.07273  0.00%     -   11s
+
+Cutting planes:
+  Clique: 5
+  MIR: 9
+  StrongCG: 2
+  Zero half: 2
+  RLT: 31
+  BQP: 7
+
+Explored 1 nodes (94726 simplex iterations) in 11.00 seconds (18.83 work units)
+Thread count was 10 (of 10 available processors)
+
+Solution count 9: 0.0727273 0.109091 0.121212 ... 34.3394
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.272727272727e-02, best bound 7.272727272727e-02, gap 0.0000%
+0 + 0 + 0.07
+1,L.07,K.07
+1,B.04,E.04
+1,G.03,H.03
+1,B.05,L.05
+1,K.01,G.01
+1,F.10,H.10
+1,H.07,B.07
+1,I.08,B.08
+1,F.06,I.06
+1,K.04,F.04
+1,B.10,K.10
+1,C.01,I.01
+1,E.09,F.09
+1,K.08,E.08
+1,G.02,C.02
+1,C.03,F.03
+1,E.06,L.06
+1,G.04,C.04
+1,E.03,D.03
+1,D.02,I.02
+1,D.07,F.07
+1,F.08,D.08
+1,D.01,F.01
+1,E.10,C.10
+1,J.03,B.03
+1,C.09,D.09
+1,E.01,J.01
+1,I.07,C.07
+1,C.06,G.06
+1,F.02,E.02
+1,C.05,D.05
+1,F.05,E.05
+1,J.10,D.10
+1,G.07,J.07
+1,K.06,B.06
+1,H.08,G.08
+1,A.08,C.08
+1,A.07,E.07
+1,B.02,H.02
+1,H.09,K.09
+1,D.06,A.06
+1,A.05,G.05
+1,K.03,I.03
+1,I.04,A.04
+1,A.03,L.03
+1,I.09,J.09
+1,J.02,A.02
+1,J.05,K.05
+1,L.08,J.08
+1,L.02,K.02
+1,H.01,A.01
+1,J.06,H.06
+1,I.05,H.05
+1,D.04,J.04
+1,G.10,I.10
+1,A.09,B.09
+1,L.10,A.10
+1,H.04,L.04
+1,B.01,L.01
+1,L.09,G.09
+2,I.06,K.06
+2,D.10,I.10
+2,K.02,J.02
+2,D.09,K.09
+2,K.03,G.03
+2,L.01,E.01
+2,G.05,H.05
+2,J.09,G.09
+2,G.07,I.07
+2,L.06,D.06
+2,D.05,E.05
+2,L.08,D.08
+2,I.05,J.05
+2,H.06,F.06
+2,F.10,J.10
+2,F.04,H.04
+2,F.03,L.03
+2,J.07,H.07
+2,G.08,F.08
+2,H.08,I.08
+2,F.09,I.09
+2,K.05,F.05
+2,J.01,H.01
+2,L.10,G.10
+2,L.02,I.02
+2,I.04,E.04
+2,D.04,L.04
+2,E.03,J.03
+2,E.02,G.02
+2,H.09,L.09
+2,E.07,K.07
+2,A.01,F.01
+2,I.01,B.01
+2,B.10,E.10
+2,F.07,A.07
+2,B.09,C.09
+2,K.01,C.01
+2,C.02,F.02
+2,A.06,J.06
+2,J.04,B.04
+2,J.08,B.08
+2,I.03,C.03
+2,K.10,A.10
+2,C.04,K.04
+2,B.05,A.05
+2,A.08,K.08
+2,C.05,L.05
+2,E.09,A.09
+2,C.07,L.07
+2,H.03,D.03
+2,A.02,H.02
+2,D.02,B.02
+2,G.01,D.01
+2,E.06,C.06
+2,H.10,C.10
+2,G.06,B.06
+2,B.03,A.03
+2,A.04,G.04
+2,C.08,E.08
+2,B.07,D.07
+3,A.10,F.10
+3,G.08,L.08
+3,F.01,B.01
+3,B.02,K.02
+3,I.09,A.09
+3,L.03,B.03
+3,D.03,K.03
+3,A.06,E.06
+3,D.08,A.08
+3,H.06,K.06
+3,A.07,C.07
+3,I.10,H.10
+3,L.01,I.01
+3,L.05,A.05
+3,A.04,H.04
+3,I.06,J.06
+3,A.03,C.03
+3,I.02,A.02
+3,L.07,J.07
+3,K.08,J.08
+3,J.09,L.09
+3,J.01,A.01
+3,H.01,K.01
+3,J.05,G.05
+3,G.09,F.09
+3,I.03,G.03
+3,E.05,I.05
+3,C.04,J.04
+3,K.05,C.05
+3,H.03,E.03
+3,E.02,L.02
+3,G.01,E.01
+3,E.07,H.07
+3,K.10,D.10
+3,C.09,H.09
+3,C.10,L.10
+3,D.07,G.07
+3,H.02,D.02
+3,D.06,G.06
+3,H.05,D.05
+3,C.08,H.08
+3,B.04,G.04
+3,J.02,C.02
+3,K.09,E.09
+3,F.05,B.05
+3,B.06,C.06
+3,B.07,I.07
+3,L.04,K.04
+3,B.08,F.08
+3,K.07,F.07
+3,E.08,I.08
+3,F.06,L.06
+3,F.04,I.04
+3,G.10,B.10
+3,C.01,D.01
+3,F.03,J.03
+3,G.02,F.02
+3,J.10,E.10
+3,D.09,B.09
+3,E.04,D.04
+Freeing default Gurobi environment

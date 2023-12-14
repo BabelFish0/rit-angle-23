@@ -24,7 +24,7 @@ One of the largest challenges is figuring out how to specify the problem. There 
 
 - `colours`, another dictionary where every player in each round is associated with a binary variable for if they play white (1) or not (0). For example, the Gurobi `Var` associated with A.01's round 2 colour is `colours[(1, 0)]`.
 
-It should be noted here that to simplify the problem, the players are just represented as a number from $0$ to $BN-1$ (written as `n_I * n_T - 1` in the code's nomenclature). So the player's rank is their number, $i \mod{n_I}$ aka `i % n_I` and their team is the floor division of their global id by the number of people per team, `i // n_I`. In this way all the information is still retained, but it is just easier to work with one axis rather than Teams, Individuals, Boards in numbers and letters!
+It should be noted here that to simplify the problem, the players are just represented as a number from $0$ to $BN-1$ (written as `n_I * n_T - 1` in the code's nomenclature). So the player's rank is their number, $i \mod{B}$ aka `i % n_I` and their team is the floor division of their global id by the number of people per team, `i // n_I`. In this way all the information is still retained, but it is just easier to work with one axis rather than Teams, Individuals, Boards in numbers and letters!
 
 Now the first order of business is to create all the valid pairings (duplicated across each round):
 
@@ -40,7 +40,7 @@ for p1 in range(n_I*n_T):
                         pairs_of_players_0.append((r, p1, p2)) # this means p1 < p2
 ```
 
-This is quite ugly but makes it unlikely to accidentally skip a configuration. The order of players does not matter so duplicates are not added to the list. Then the model can be initialized and the previously mentioned variables added.
+This is quite ugly but makes it unlikely to accidentally skip a configuration. The order of players does not matter so duplicates are not added to the list. Then the model can be initialized and the previously mentioned variables added. Also note that we do not need to worry about playing against yourself or own team as these configurations are never generated to start with; therefore, these are not included as constraints later.
 
 ```python
 m = gp.Model("mip1")
@@ -215,7 +215,7 @@ For $Q_Z$ the fraction has been moved so:
 
 $$Q_Z=\sum_{i=1}^N\left|1-\frac{4}{R B(B+1)} \sum_{l=1}^B l w_{i l}\right|$$
 
-$$R B(B+1)Q_Z=\sum_{i=1}^N\left|R B(B+1)-4 \sum_{l=1}^B l w_{i l}\right|$$.
+$$R B(B+1)Q_Z=\sum_{i=1}^N\left|R B(B+1)-4 \sum_{l=1}^B l w_{i l}\right|$$
 
 `z` is set to the RHS of this so in the final cost calculation the expression is `x + y + (1/(n_R*n_I*(n_I+1)))*z`. This allows the data type of `z` to be integer which is helpful to the optimiser.
 

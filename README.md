@@ -1,5 +1,5 @@
 # rit-angle-23
-My [horrifically janky code](/optimization.py) for the last question of the 2023 MEI Ritangle competition - [see the question](/Final%20question%20%7C%20Ritangle.pdf).
+My [horrifically janky code](/optimization.py) for the last question of the 2023 MEI Ritangle competition - [see the question](/Final%20question%20%7C%20Ritangle.pdf). Full writeup [here](/writeup.md).
 
 [checker.py](/checker.py) is for calculating the detriment for the example in the question (and manually checking certain cases).
 

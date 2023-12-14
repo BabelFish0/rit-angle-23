@@ -4,3 +4,5 @@ My [horrifically janky code](/optimization.py) for the last question of the 2023
 [checker.py](/checker.py) is for calculating the detriment for the example in the question (and manually checking certain cases).
 
 The approach is centred around the [Gurobi Optimizer](https://support.gurobi.com/hc/en-us/articles/17278438215313-Tutorial-Getting-Started-with-the-Gurobi-Python-API) and inspired by [this project](https://github.com/leonardocalizaya/Integer-Programming-Project/blob/main/optimization.ipynb).
+
+Jude Young.
